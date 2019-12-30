@@ -32,6 +32,7 @@
 
 	<build>
 		<plugins>
+			<!-- spring-boot-maven-plugin spring-boot的maven打包插件，方便打包成可运行jar包 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
