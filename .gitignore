@@ -1,16 +1,16 @@
-# Compiled class file
+# 排除编译后的class文件
 *.class
-
-# Log file
+# 排除log文件
 *.log
+# 排除target目录
+target/
 
-# BlueJ files
-*.ctxt
 
-# Mobile Tools for Java (J2ME)
+# Mobile Tools for Java (J2ME) / Android APP的依赖（TODO）
 .mtj.tmp/
 
-# Package Files #
+
+# Package Files  / 排除打包文件
 *.jar
 *.war
 *.nar
@@ -19,5 +19,13 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+
+# 排除idea的目录
+.idea/
+# 排除idea的项目标识文件
+*.iml
+
+
+# 排除eclipse的项目标识文件
+*.project
+
