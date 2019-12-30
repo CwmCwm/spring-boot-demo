@@ -4,15 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- groupId 和 artifactId 的命名的语义 -->
-    <groupId>cwm</groupId>
+    <!-- groupId 和 artifactId 的命名的语义就是demo -->
+    <groupId>com.demo</groupId>
     <artifactId>spring-boot-demo</artifactId>
     <packaging>pom</packaging>
     <!-- springboot 2.2.2.RELEASE 版本-->
     <version>2.2.2.RELEASE</version>
 
     <modules>
+        <!-- spring-boot 启动时的图标，就是图标展示 -->
         <module>spring-boot-banner</module>
+
+        <!-- spring-boot 启动http服务 -->
+        <module>spring-boot-http</module>
     </modules>
 
     <build>
