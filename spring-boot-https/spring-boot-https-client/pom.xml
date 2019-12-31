@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.demo</groupId>
-	<artifactId>spring-boot-http</artifactId>
+	<artifactId>spring-boot-https-client</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Spring Boot http</name>
-	<description>启动http服务</description>
+	<name>Spring Boot https client</name>
+	<description>https客户端</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -23,10 +23,14 @@
 	</properties>
 
 	<dependencies>
-		<!-- spring-boot-starter-web 是spring-boot 启动web，这里默认使用tomcat服务 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
 		</dependency>
 	</dependencies>
 

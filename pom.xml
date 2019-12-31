@@ -17,6 +17,9 @@
 
         <!-- spring-boot 启动http服务 -->
         <module>spring-boot-http</module>
+
+        <!-- spring-boot 启动https服务 -->
+        <module>spring-boot-https</module>
     </modules>
 
     <build>
