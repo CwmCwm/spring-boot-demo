@@ -12,7 +12,7 @@ keytool命令实操=》https://www.cnblogs.com/aigeileshei/p/8855873.html
 ### spring-boot-https-server作为https提供方
 ssl证书的生成
 `keytool -genkey -keyalg RSA -alias https -keystore keystore.jks -storepass password1 -validity 360 -keysize 2048`
-![Image text](https://github.com/lightClouds917/designMode/blob/master/src/main/resources/templates/ITyunqing.jpg)
+![Image text](./README-RESOURCES/spring-boot-https-server1.jpg)
 spring-boot-https-server/src/main/resources/keystore.jks  是密钥库，命令行 `keytool -list -keystore keystore.jks` 可以看密钥库中的有哪些密钥
 spring-boot-https-server作为https提供方，加载密钥库中指定的密钥就可以启动https服务，详见application.properties
 
@@ -23,7 +23,7 @@ spring-boot-https-server作为https提供方，加载密钥库中指定的密钥
 因为spring-boot-https-server使用的密钥是https，所以这里证书名就叫https.cer(可读性)
 但是.cer 是浏览器识别证书的格式，spring-boot-https-client 作为java程序，需要的证书格式是 .jks/.keystore (.jks和.keystore是一样的，虽然后缀名不一样)
 接下来就是将https.cer 转换为 https.keystore（你导出成https.jks也是没问题的，java都能识别）
-![Image text](https://github.com/lightClouds917/designMode/blob/master/src/main/resources/templates/ITyunqing.jpg)
+![Image text](./README-RESOURCES/spring-boot-https-client3.jpg)
 ok，去看spring-boot-https-server 和 spring-boot-https-client 的代码并运行试一试
 
 
