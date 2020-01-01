@@ -1,13 +1,16 @@
 # spring-boot-http
 
 ### 本项目知识点
-1. 如何启动一个spring-boot https项目
+1. 启动spring-boot-https-server https提供方
+2. 启动spring-boot-https-client https调用方
 
 ### 知识点补充
 - 密钥对,公钥,证书,私钥,jks,keystore,truststore,cer,pfx名词说明=》https://blog.csdn.net/w451373766/article/details/7109225
 - 证书，私钥，公钥，pfx,keystore,pem,der 都是什么？？=》https://blog.csdn.net/qq_30698633/article/details/77895151
 - 常用的keytool命令=》https://www.cnblogs.com/aiaitie/p/9525562.html
 - keytool命令实操=》https://www.cnblogs.com/aigeileshei/p/8855873.html
+- CA认证=》https://baike.baidu.com/item/CA认证/6471579?fr=aladdin
+- Https 详解=》https://www.jianshu.com/p/6c46ef63c407
 
 ### spring-boot-https-server作为https提供方
 - ssl证书的生成命令如下

@@ -30,7 +30,7 @@ public class SpringMVCDemo1Controller {
      *
      * @ResponseBody org.springframework.web.bind.annotation.ResponseBody springMVC的注解，
      * 表示http返回时如何处理数据格式，你返回各种java类试一下;浏览器F12看一下具体返回头和返回体
-     * 关于@ResponseBody的属性自己看源代码，有注释
+     * 关于@ResponseBody的属性自己看源代码，有注释   同理注解如何使用也是看源码/注释/实操
      * */
     @RequestMapping(value = "/springMVCAnnotationDemo1Controller/test1")
     @ResponseBody

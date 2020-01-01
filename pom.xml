@@ -20,6 +20,9 @@
 
         <!-- spring-boot 启动https服务 -->
         <module>spring-boot-https</module>
+
+        <!-- spring-boot 生命周期 -->
+        <module>spring-boot-lifecycle</module>
     </modules>
 
     <build>
