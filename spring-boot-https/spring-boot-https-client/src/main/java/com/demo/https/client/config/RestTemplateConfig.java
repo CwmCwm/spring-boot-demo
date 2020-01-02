@@ -43,7 +43,7 @@ public class RestTemplateConfig {
 
     /**
      * @Bean org.springframework.context.annotation.Bean spring的注解，将方法返回的对象作为bean存储在IOC容器中
-     * bean的id默认是方法名，可以通过 @Bean 的属性指定，这里bean的id="restTemplate"
+     * bean的name默认是方法名，可以通过 @Bean 的属性指定，这里bean的name="restTemplate"
      * 看HttpsClientController 中的属性命名和注入
      * */
     @Bean
@@ -52,7 +52,7 @@ public class RestTemplateConfig {
     }
 
     /**
-     * 这里bean的id="httpsRestTemplate" 自己可以打断点一步步跟代码，加深理解
+     * 这里bean的name="httpsRestTemplate" 自己可以打断点一步步跟代码，加深理解
      * 每个类点进去看一下注释和实现的接口
      * 下面的目的就是做了https的一些准备，这些准备是为了封装成RestTemplate
      * */
