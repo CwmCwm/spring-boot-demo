@@ -1,5 +1,6 @@
 package com.demo.lifecycle;
 
+import com.demo.lifecycle.aop.Calculator;
 import com.demo.lifecycle.bean.Human;
 import com.demo.lifecycle.bean.Tiger;
 import org.springframework.boot.SpringApplication;
@@ -27,7 +28,9 @@ public class LifecycleApplication {
 		// configurableApplicationContext.close(); springIOC容器关闭就会销毁bean，就会调用Tiger的destroy方法
 //		configurableApplicationContext.close();
 
-
+		// SpringAOP的debug，试一下 4/2, 在试一下 4/0
+		Calculator calculator = configurableApplicationContext.getBean(Calculator.class);
+		calculator.div(4, 2);
 
 	}
 

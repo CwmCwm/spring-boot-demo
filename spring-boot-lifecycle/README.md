@@ -11,10 +11,16 @@
 8. spring-boot生命周期，其实就是spring容器的生命周期，你看过spring源码就好说，这里画visio图，自己可以跟着debug打断点跟一下
 9. spring在各个生命周期节点提供哪些接口给你扩展
 
+### 认知细化
+- spring中bean这个概念就是对象，bean从springIOC流程功能上可以分为两种，
+第一种是业务bean（就是我们自己经常写@Controller, @Service, @Repository, @Component, @Bean）
+第二种是处理第一种业务bean的bean，就是实现BeanPostProcessor接口的bean，所以BeanPostProcessor接口是关键
+
 ### springIOC流程图
 [spring-boot和spring的IOC核心组件和流程](./README-RESOURCES/spring-boot和spring的IOC核心组件和流程.vsdx)
 
 
-
 ### springAOP流程图
+[spring-boot和spring的AOP核心组件和流程](./README-RESOURCES/spring-boot和spring的AOP核心组件和流程.vsdx)
+
 
