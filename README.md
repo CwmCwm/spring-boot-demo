@@ -22,6 +22,9 @@ springboot的demo，方便学习，回忆，工作
 3. spring-boot-https
  3.1 spring-boot-https-server
  3.2 spring-boot-https-client
-
+4. spring-boot-lifecycle
+5. spring-boot-annotation
+6. spring-boot-test
+7. spring-boot-log
 
 

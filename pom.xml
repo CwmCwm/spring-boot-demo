@@ -23,6 +23,9 @@
 
         <!-- spring-boot 生命周期 -->
         <module>spring-boot-lifecycle</module>
+
+        <!-- spring-boot 单元测试-->
+        <module>spring-boot-test</module>
     </modules>
 
     <build>
