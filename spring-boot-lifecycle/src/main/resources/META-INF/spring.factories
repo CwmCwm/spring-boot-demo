@@ -1,0 +1,4 @@
+
+
+org.springframework.boot.SpringApplicationRunListener=\
+com.demo.lifecycle.configuration.DiySpringApplicationRunListener

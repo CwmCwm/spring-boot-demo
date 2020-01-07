@@ -1,6 +1,6 @@
 package com.demo.http.filter;
 
-import com.demo.http.config.DiyWebMvcConfig;
+import com.demo.http.configuration.DiyWebMvcConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.*;

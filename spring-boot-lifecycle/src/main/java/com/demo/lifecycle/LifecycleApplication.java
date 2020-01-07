@@ -32,6 +32,8 @@ public class LifecycleApplication {
 		Calculator calculator = configurableApplicationContext.getBean(Calculator.class);
 		calculator.div(4, 2);
 
+		
+
 	}
 
 }

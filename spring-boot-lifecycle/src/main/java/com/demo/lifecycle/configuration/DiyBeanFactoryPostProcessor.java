@@ -1,4 +1,4 @@
-package com.demo.lifecycle.config;
+package com.demo.lifecycle.configuration;
 
 
 import org.springframework.beans.BeansException;

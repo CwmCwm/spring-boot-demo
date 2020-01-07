@@ -15,6 +15,13 @@ springboot的demo，方便学习，回忆，工作
 1. 代码尽量写注释，原因，心路历程；有总比没有好。
 2. 知识点串联，比较，实践去验证知识点
 3. 每个项目都README.md文档，作为了解项目的入口
+4. 命名规则
+  4.1 参考spring命名规则，如 configuration目录，WebMvcConfiguration配置类
+  4.2 参考注解命名，@Controller 所以controller目录，xxxController类；@Service 所以service目录，xxxService类；@Repository 所以repository目录，xxxRepository类
+5. 目录规则
+  5.1 按技术点/技术功能分类，不按业务功能划分目录（业务功能按类命名来确定划分，所以起名字规则要定好）
+  5.2 目录层级少（一般就主类一层，技术功能一层，两层完事）
+  
 
 ### 查看顺序
 1. spring-boot-banner
@@ -26,5 +33,6 @@ springboot的demo，方便学习，回忆，工作
 5. spring-boot-annotation
 6. spring-boot-test
 7. spring-boot-log
+
 
 

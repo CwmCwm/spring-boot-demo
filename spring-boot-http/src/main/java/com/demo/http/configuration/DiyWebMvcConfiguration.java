@@ -1,4 +1,4 @@
-package com.demo.http.config;
+package com.demo.http.configuration;
 
 import com.demo.http.interceptor.DiyHandlerInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * 看WebMvcConfigurer接口注释，理解方法语义
  * */
 @Configuration
-public class DiyWebMvcConfig implements WebMvcConfigurer {
+public class DiyWebMvcConfiguration implements WebMvcConfigurer {
 
     // 注入拦截器Interceptor，下面就要往springMVC配置拦截器了
     @Autowired

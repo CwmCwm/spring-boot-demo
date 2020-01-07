@@ -26,6 +26,12 @@
 
         <!-- spring-boot 单元测试-->
         <module>spring-boot-test</module>
+
+        <!-- spring-boot 日志-->
+        <module>spring-boot-log</module>
+
+        <!-- spring-boot 和 spring 注解-->
+        <module>spring-boot-annotation</module>
     </modules>
 
     <build>

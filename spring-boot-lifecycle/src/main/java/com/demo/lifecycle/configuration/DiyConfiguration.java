@@ -1,8 +1,7 @@
-package com.demo.lifecycle.config;
+package com.demo.lifecycle.configuration;
 
 
 import com.demo.lifecycle.bean.Tiger;
-import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -10,7 +9,7 @@ import org.springframework.context.annotation.Scope;
 import java.util.Random;
 
 @Configuration
-public class DiyConfig {
+public class DiyConfiguration {
 
     /**
      * @Scope org.springframework.context.annotation.Scope

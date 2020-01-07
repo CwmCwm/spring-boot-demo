@@ -1,4 +1,4 @@
-package com.demo.https.client.config;
+package com.demo.https.client.configuration;
 
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
@@ -18,8 +18,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.InputStream;
@@ -33,7 +31,7 @@ import java.util.List;
  * @Configuration org.springframework.context.annotation.Configuration spring的注解，用于表示这个类是配置类，spring提倡用配置类来替代 xml配置
  * */
 @Configuration
-public class RestTemplateConfig {
+public class RestTemplateConfiguration {
 
     /**
      * 建造者模式，你可以配置 restTemplateBuilder 后再build()

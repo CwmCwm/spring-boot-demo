@@ -1,9 +1,7 @@
-package com.demo.lifecycle.config;
+package com.demo.lifecycle.configuration;
 
 
-import com.demo.lifecycle.LifecycleApplication;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.stereotype.Component;
 

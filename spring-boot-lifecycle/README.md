@@ -9,7 +9,10 @@
 6. org.springframework.beans.factory.config.BeanPostProcessor接口的使用
 7. org.springframework.beans.factory.SmartInitializingSingleton接口的使用
 8. spring-boot生命周期，其实就是spring容器的生命周期，你看过spring源码就好说，这里画visio图，自己可以跟着debug打断点跟一下
-9. spring在各个生命周期节点提供哪些接口给你扩展
+10. org.springframework.boot.SpringApplicationRunListener接口的使用
+11. org.springframework.boot.ApplicationRunner接口的使用
+12. org.springframework.boot.CommandLineRunner接口的使用
+13. spring在各个生命周期节点提供哪些接口给你扩展
 
 ### 认知细化
 - spring中bean这个概念就是对象，bean从springIOC流程功能上可以分为两种，

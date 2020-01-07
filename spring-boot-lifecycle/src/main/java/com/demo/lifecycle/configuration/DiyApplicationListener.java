@@ -1,4 +1,4 @@
-package com.demo.lifecycle.config;
+package com.demo.lifecycle.configuration;
 
 
 import org.springframework.context.ApplicationListener;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
  *
  * 关于事件的语义/生命周期，真要使用才去看吧
  */
-@Component
 public class DiyApplicationListener implements ApplicationListener<ApplicationContextEvent> {
 
     @Override
