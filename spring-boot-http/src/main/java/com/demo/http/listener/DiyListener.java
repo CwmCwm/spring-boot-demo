@@ -50,7 +50,7 @@ public class DiyListener implements ServletRequestListener {
      * */
     @Override
     public void requestInitialized (ServletRequestEvent sre) {
-        System.out.println(Thread.currentThread() + "---->:requestInitialized");
+        System.out.println(Thread.currentThread() + "---->:DiyListener.requestInitialized");
     }
 
     /**
@@ -59,7 +59,7 @@ public class DiyListener implements ServletRequestListener {
      * */
     @Override
     public void requestDestroyed (ServletRequestEvent sre) {
-        System.out.println(Thread.currentThread() + "---->:requestDestroyed");
+        System.out.println(Thread.currentThread() + "---->:DiyListener.requestDestroyed");
     }
 
 }

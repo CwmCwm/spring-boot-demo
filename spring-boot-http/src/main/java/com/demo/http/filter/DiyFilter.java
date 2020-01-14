@@ -1,6 +1,6 @@
 package com.demo.http.filter;
 
-import com.demo.http.configuration.DiyWebMvcConfig;
+import com.demo.http.configuration.DiyWebMvcConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.*;
@@ -17,15 +17,15 @@ public class DiyFilter implements Filter {
 
     // 注入DiyWebMvcConfig
     @Autowired
-    DiyWebMvcConfig diyWebMvcConfig;
+    DiyWebMvcConfiguration diyWebMvcConfiguration;
 
     /**
      * Filter初始化时调用
      * */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println(Thread.currentThread() + "---->:init");
-        System.out.println(Thread.currentThread() + "---->:" + diyWebMvcConfig);
+        System.out.println(Thread.currentThread() + "---->:DiyFilter.init");
+        System.out.println(Thread.currentThread() + "---->:" + diyWebMvcConfiguration);
     }
 
     /**
@@ -34,7 +34,7 @@ public class DiyFilter implements Filter {
      * */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
-        System.out.println(Thread.currentThread() + "-------->:doFilter");
+        System.out.println(Thread.currentThread() + "-------->:DiyFilter.doFilter");
     }
 
     /**
@@ -42,7 +42,7 @@ public class DiyFilter implements Filter {
      * */
     @Override
     public void destroy() {
-        System.out.println(Thread.currentThread() + "------------>:destroy");
+        System.out.println(Thread.currentThread() + "------------>:DiyFilter.destroy");
     }
 
 }

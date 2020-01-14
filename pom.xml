@@ -32,6 +32,9 @@
 
         <!-- spring-boot 和 spring 注解-->
         <module>spring-boot-annotation</module>
+
+        <!-- spring-boot actuator监控服务-->
+        <module>spring-boot-actuator</module>
     </modules>
 
     <build>

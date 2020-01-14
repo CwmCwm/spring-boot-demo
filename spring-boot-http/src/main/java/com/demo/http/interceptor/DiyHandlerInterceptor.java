@@ -21,7 +21,7 @@ public class DiyHandlerInterceptor implements HandlerInterceptor {
      * 应用场景：可以提前做一些判断，如参数校验/登录状态校验（通用/公用），不合法的直接返回（直接写入输出流OutStream）
      * */
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println(Thread.currentThread() + "---->:preHandle");
+        System.out.println(Thread.currentThread() + "---->:DiyHandlerInterceptor.preHandle");
         response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
         response.setHeader("Access-Control-Allow-Methods", "*");
         response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -35,7 +35,7 @@ public class DiyHandlerInterceptor implements HandlerInterceptor {
      * 应用场景：所以感觉这里最多就打个日志
      * */
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
-        System.out.println(Thread.currentThread() + "-------->:执行postHandle");
+        System.out.println(Thread.currentThread() + "-------->:DiyHandlerInterceptor.执行postHandle");
         // 再后置处理上写response的header没有生效
         response.setHeader("postHandle", "postHandle");
         response.setStatus(404);
@@ -46,7 +46,7 @@ public class DiyHandlerInterceptor implements HandlerInterceptor {
      * 应用场景：所以感觉这里最多就打个日志
      * */
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
-        System.out.println(Thread.currentThread() + "------------>:afterCompletion");
+        System.out.println(Thread.currentThread() + "------------>:DiyHandlerInterceptor.afterCompletion");
     }
 
 }

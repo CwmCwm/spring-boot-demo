@@ -20,7 +20,7 @@ springboot的demo，方便学习，回忆，工作
   4.2 参考注解命名，@Controller 所以controller目录，xxxController类；@Service 所以service目录，xxxService类；@Repository 所以repository目录，xxxRepository类
 5. 目录规则
   5.1 按技术点/技术功能分类，不按业务功能划分目录（业务功能按类命名来确定划分，所以起名字规则要定好）
-  5.2 目录层级少（一般就主类一层，技术功能一层，两层完事）
+  5.2 目录层级少（一般就主类一层，技术功能一层，两层完事），微服务/服务化的思想，不是单应用的思想
   
 
 ### 查看顺序
@@ -33,6 +33,8 @@ springboot的demo，方便学习，回忆，工作
 5. spring-boot-annotation
 6. spring-boot-test
 7. spring-boot-log
+8. spring-boot-actuator
+9. docker（好用，安利）
 
 
 
