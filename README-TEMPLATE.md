@@ -1,13 +1,21 @@
 # README模板（使用一级标题）
 写个demo模板，方便记忆语法和CV大法（写个概要描述）  
 目标是轻量格式写作，不用记那么多语法，我也不会用那么多语法/格式，简约够用就行了  
-
+换行时，在每行的后面加两个空格  
 
 
 ### 文本样式（使用三级标题）
 **加粗字体**  
 *斜字体*  
-```代码：class Kotlin01(var name:String):Any(){}```  
+```java
+package xx.xx;
+
+public class mainDemo {
+	public static void main(String [] args) {
+		System.out.println("Hello World");
+	}
+}
+```  
 
 
 
