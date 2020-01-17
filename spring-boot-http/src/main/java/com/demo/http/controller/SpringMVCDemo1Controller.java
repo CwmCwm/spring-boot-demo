@@ -37,14 +37,14 @@ public class SpringMVCDemo1Controller {
 //        return new String("String");
 
         //返回java.util.Map
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "错误信息");
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "错误信息");
         List<String> list = new ArrayList<>();
         list.add("String1");
         list.add("String2");
-        returnMap.put("list", list);
-        return returnMap;
+        responseMap.put("list", list);
+        return responseMap;
     }
 
 
@@ -58,15 +58,15 @@ public class SpringMVCDemo1Controller {
     @RequestMapping(value = "/springMVCAnnotationDemo1Controller/get", method = RequestMethod.GET)
     @ResponseBody
     public Object get(@RequestParam(name = "name", defaultValue = "spring", required = false) String name, @RequestParam(name = "age") Integer age) {
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "错误信息");
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "错误信息");
         // 如数据库查询/调用其他服务查询/各种查询，然后返回查询数据
         Map<String, Object> human = new HashMap<>();
         human.put("name", name);
         human.put("age", age);
-        returnMap.put("human", human);
-        return returnMap;
+        responseMap.put("human", human);
+        return responseMap;
     }
 
     /**
@@ -79,12 +79,12 @@ public class SpringMVCDemo1Controller {
     @RequestMapping(value = "/springMVCAnnotationDemo1Controller/post", method = RequestMethod.POST)
     @ResponseBody
     public Object post(@RequestBody Map<String, Object> requestMap) {
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "错误信息");
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "错误信息");
         // 如数据库新增/调用其他服务新增/各种新增，然后返回新增的结果
-        returnMap.put("requestMap", requestMap);
-        return returnMap;
+        responseMap.put("requestMap", requestMap);
+        return responseMap;
     }
 
     /**
@@ -97,12 +97,12 @@ public class SpringMVCDemo1Controller {
     @RequestMapping(value = "/springMVCAnnotationDemo1Controller/put", method = RequestMethod.PUT)
     @ResponseBody
     public Object put(@RequestBody Map<String, Object> requestMap) {
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "错误信息");
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "错误信息");
         // 如数据库更新/调用其他服务更新/各种更新，然后返回更新的结果
-        returnMap.put("requestMap", requestMap);
-        return returnMap;
+        responseMap.put("requestMap", requestMap);
+        return responseMap;
     }
 
     /**
@@ -114,15 +114,15 @@ public class SpringMVCDemo1Controller {
     @RequestMapping(value = "/springMVCAnnotationDemo1Controller/delete", method = RequestMethod.DELETE)
     @ResponseBody
     public Object delete(@RequestParam(name = "name", required = false) String name, @RequestParam(name = "age", required = false) Integer age) {
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "错误信息");
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "错误信息");
         // 如数据库删除/调用其他服务删除/各种删除，然后返回删除的结果
         Map<String, Object> human = new HashMap<>();
         human.put("name", name);
         human.put("age", age);
-        returnMap.put("human", human);
-        return returnMap;
+        responseMap.put("human", human);
+        return responseMap;
     }
 
 }

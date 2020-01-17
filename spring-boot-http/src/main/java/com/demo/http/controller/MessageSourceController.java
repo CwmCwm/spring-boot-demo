@@ -30,20 +30,20 @@ public class MessageSourceController {
     @RequestMapping(value = "/messageSourceController/messageSource")
     @ResponseBody
     public Object messageSource() {
-        Map<String, Object> returnMap = new HashMap<>(3);
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "success");
+        Map<String, Object> responseMap = new HashMap<>(3);
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "success");
 
         // 不指定Locale参数，那么就按服务器/操作系统的地区
-        returnMap.put("default", messageSource.getMessage("hello", null, "", null));
+        responseMap.put("default", messageSource.getMessage("hello", null, "", null));
         // 指定Locale.US地区
-        returnMap.put("en_US", messageSource.getMessage("hello", null, "", Locale.US));
+        responseMap.put("en_US", messageSource.getMessage("hello", null, "", Locale.US));
         // 指定Locale.SIMPLIFIED_CHINESE地区
-        returnMap.put("zh_CN", messageSource.getMessage("hello", null, "", Locale.SIMPLIFIED_CHINESE));
+        responseMap.put("zh_CN", messageSource.getMessage("hello", null, "", Locale.SIMPLIFIED_CHINESE));
         // 指定Locale.FRENCH地区，法国
-        returnMap.put("fr", messageSource.getMessage("hello", null, "", Locale.FRENCH));
+        responseMap.put("fr", messageSource.getMessage("hello", null, "", Locale.FRENCH));
 
-        return returnMap;
+        return responseMap;
     }
 
 

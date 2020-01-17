@@ -1,7 +1,7 @@
-package com.demo.test;
+package com.demo.test.controller;
 
 
-import com.demo.test.controller.MockMvcController;
+import com.demo.test.TestApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @SpringBootTest(classes = TestApplication.class)
 @RunWith(value = SpringRunner.class)
 @WebAppConfiguration
-public class ControllerTest {
+public class MockMvcControllerTest {
 
     // 注入Controller
     @Autowired

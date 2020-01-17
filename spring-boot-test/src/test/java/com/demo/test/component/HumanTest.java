@@ -1,6 +1,6 @@
-package com.demo.test;
+package com.demo.test.component;
 
-import com.demo.test.component.Human;
+import com.demo.test.TestApplication;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,12 +17,12 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @RunWith 看注释
  *   看不懂，反正照着用
  *
- * 这个Test1 Demo单元测试 @Bean, @Service, @Repository, @Component
- * 单元测试 @Controller 见ControllerTest
+ * 这个Demo单元测试 @Bean, @Service, @Repository, @Component
+ * 单元测试 @Controller 见MockMvcControllerTest
  * */
 @SpringBootTest(classes = TestApplication.class)
 @RunWith(value = SpringRunner.class)
-public class Test1 {
+public class HumanTest {
 
     @Autowired
     private Human human;

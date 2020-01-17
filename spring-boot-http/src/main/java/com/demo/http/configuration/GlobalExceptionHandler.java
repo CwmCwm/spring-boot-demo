@@ -31,19 +31,32 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = NullPointerException.class)
     @ResponseBody
     public Object handleNullPointerException(NullPointerException exception) {
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 100);
-        returnMap.put("errorMessage", exception.getMessage());
-        return returnMap;
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 100);
+        responseMap.put("message", exception.getMessage());
+        return responseMap;
     }
 
     @ExceptionHandler(value = IllegalArgumentException.class)
     @ResponseBody
     public Object handleIllegalArgumentException(IllegalArgumentException exception) {
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 101);
-        returnMap.put("errorMessage", exception.getMessage());
-        return returnMap;
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 101);
+        responseMap.put("message", exception.getMessage());
+        return responseMap;
+    }
+
+
+    /**
+     * 处理其他异常，上面没有匹配到就在这里匹配
+     * */
+    @ExceptionHandler(value = Exception.class)
+    @ResponseBody
+    public Object handleException(Exception exception) {
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 10000);
+        responseMap.put("message", exception.getMessage());
+        return responseMap;
     }
 
 }

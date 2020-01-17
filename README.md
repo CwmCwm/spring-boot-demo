@@ -24,17 +24,19 @@ springboot的demo，方便学习，回忆，工作
   
 
 ### 查看顺序
-1. spring-boot-banner
-2. spring-boot-http
-3. spring-boot-https
- 3.1 spring-boot-https-server
- 3.2 spring-boot-https-client
-4. spring-boot-lifecycle
-5. spring-boot-annotation
-6. spring-boot-test
-7. spring-boot-log
-8. spring-boot-actuator
-9. docker（好用，安利）
-
+1. spring-boot-banner  
+2. spring-boot-http  
+3. spring-boot-https  
+  3.1 spring-boot-https-server  
+  3.2 spring-boot-https-client  
+4. spring-boot-lifecycle  
+5. spring-boot-annotation  
+6. spring-boot-test  
+7. spring-boot-log  
+8. spring-boot-actuator  
+9. docker
+  9.1  docker启动mariadb  
+10. spring-boot-mybatis  
+11. spring-boot-jdbc  
 
 

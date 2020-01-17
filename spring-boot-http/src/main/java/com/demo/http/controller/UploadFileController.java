@@ -48,10 +48,10 @@ public class UploadFileController {
         Path path = Paths.get(uploadDirectory + file.getOriginalFilename());
         Files.write(path, bytes);
 
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "success");
-        return returnMap;
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "success");
+        return responseMap;
     }
 
 
@@ -82,10 +82,10 @@ public class UploadFileController {
             }
         }
 
-        Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("errorCode", 0);
-        returnMap.put("errorMessage", "success");
-        return returnMap;
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "success");
+        return responseMap;
     }
 
 }

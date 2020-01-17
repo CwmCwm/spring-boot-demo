@@ -20,7 +20,7 @@ public class LogController {
 
     /**
      * 面向接口编程的思想
-     * spring-boot默认使用slf4j日志门面，注意引入的类哦
+     * spring-boot默认使用slf4j日志门面，注意引入的类是 org.slf4j.Logger
      * */
     private final Logger logger = LoggerFactory.getLogger(LogController.class);
 

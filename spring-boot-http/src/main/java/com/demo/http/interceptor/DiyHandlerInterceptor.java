@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * HandlerInterceptor 是springMVC的拦截器
  * 注册为bean，然后再springMVC那边配置使用，这里见DiyWebMvcConfig的配置
  * 拦截器的使用场景：你都拿到HttpServletRequest 和 HttpServletResponse 了，通用/公用的场景
  * 打个断点就知道执行顺序了

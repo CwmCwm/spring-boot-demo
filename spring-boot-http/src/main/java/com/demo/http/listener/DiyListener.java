@@ -38,8 +38,11 @@ import javax.servlet.annotation.WebListener;
  * */
 
 /**
+ * @WebListener 注解标识这个是Servlet的Listener
+ * 与filter同理，在main类上加上@ServletComponentScan
  * 理解什么是监听器，就是监听某个事件，当某个事件发生时，回调对应的方法
  * 监听器是没有匹配url的，理解监听器的概念就知道为啥没有匹配url
+ *
  * */
 @WebListener
 public class DiyListener implements ServletRequestListener {
