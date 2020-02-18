@@ -29,6 +29,8 @@
 **容器**（容器就是进程，有代码/镜像了，你要运行啊）  
 **仓库**（maven仓库/maven本地仓库/maven私有仓库/maven公共仓库，docker仓库/docker本地仓库/docker私有仓库/docker公共仓库）  
 命令就是围绕这三个概念  
+给张图，百度丰富概念  
+[](./README-RESOURCES/docker2.jpg)
 
 ### 3 docker的安装  
 #### 3.1 安装Hyper-V
@@ -43,15 +45,15 @@
 注意点2 CentOS7添加定时任务去更新网络时间（原因时间同步嘛，不然会有些麻烦，如docker拉取镜像）  
 
 #### 3.3 安装docker  
+这里使用 docker-ce-18.06.3.ce-3.el7  这个版本
 安装好CentOS7后，配置好网络后，使用yum安装docker  
 [CentOS7安装docker](https://blog.csdn.net/c15625012146/article/details/86654641)  
 安装完docker，启动docker，运行hello-world容器试试  
 注意点1 docker远程镜像仓库（又是网络，找个国内的镜像仓库）  
-   
-
 
 ### 4 docker的使用  
-具体见本目录对应README.md，演示安装容器
+[docker官方文档](https://docs.docker.com/)  
+具体见本目录对应README.md，演示安装容器  
 
 
 
