@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace 命名空间，作用和package类似，都是区分同名方法 -->
+<mapper namespace="com.demo.mybatis.crmMapper.CrmCustomerMapper">
+
+    <!-- mybatis的一些标签
+	<include /> 标签，我基本不用，没啥复用
+	<choose> <when> <otherwise> 这些标签我也不用
+	<trim></trim> 标签，前缀后缀分隔符，用于 insert ，但我不用；所以没有下面示例
+	<set></set> 标签，就是辅助处理update语句的set的逗号。具体见下面示例
+	<if></if> 标签，就是if标签。具体见下面示例
+	<where></where> 标签，就是辅助处理 and 和 不写 1=1 。具体见下面示例
+	<foreach></foreach> 标签,用于 in ;批量插入sql语句。具体见下面示例
+    -->
+
+	<!--
+    id 标识，SqlSessionTemplate才能通过 namespace和id 才能找到这条sql语句
+    parameterType 入参的类型，我一般直接用java.util.Map，这样可以带多个参数且不用定义entity
+    flushCache 将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空
+	timeout 设置超时时间，超时之后抛出异常，秒
+	statementType STATEMENT(直接操作sql，不进行预编译)，PREPARED(预处理，参数，进行预编译)或CALLABLE(执行存储过程)。默认值：PREPARED
+	useGeneratedKeys 对insert和update有用,MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键,默认值：false;我不用这个，而是使用SnowFlake算法
+	keyProperty 对insert和update有用,MyBatis 会通过 getGeneratedKeys 的返回值或者通过 insert 语句的 selectKey 子元素设置它的键值，默认：unset。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表，我是不用
+	keyColumn 对insert和update有用,通过生成的键值设置表中的列名，这个设置仅在某些数据库（像 PostgreSQL）是必须的，当主键列不是表中的第一列的时候需要设置。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表
+	databaseId 如果配置了 databaseIdProvider，MyBatis 会加载所有的不带 databaseId 或匹配当前 databaseId 的语句；如果带或者不带的语句都有，则不带的会被忽略。我都没用过
+    -->
+    <!-- insert语句一般就一条sql，把所有字段都填上就完成。默认值在程序中赋值 -->
+	<insert id="insert" parameterType="java.util.Map">
+		insert into crmCustomer
+		(customerId, createTime, modifiedTime, customerName)
+		values(#{customerId}, #{createTime}, #{modifiedTime}, #{customerName});
+	</insert>
+
+	<!--
+	id 标识，SqlSessionTemplate才能通过 namespace和id 才能找到这条sql语句
+    parameterType 入参的类型，我一般直接用java.util.Map，这样可以带多个参数且不用定义entity
+    flushCache 将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空
+	timeout 设置超时时间，超时之后抛出异常，秒
+	statementType STATEMENT(直接操作sql，不进行预编译)，PREPARED(预处理，参数，进行预编译)或CALLABLE(执行存储过程)。默认值：PREPARED
+	useGeneratedKeys 对insert和update有用,MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键,默认值：false;我不用这个，而是使用SnowFlake算法
+	keyProperty 对insert和update有用,MyBatis 会通过 getGeneratedKeys 的返回值或者通过 insert 语句的 selectKey 子元素设置它的键值，默认：unset。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表，我是不用
+	keyColumn 对insert和update有用,通过生成的键值设置表中的列名，这个设置仅在某些数据库（像 PostgreSQL）是必须的，当主键列不是表中的第一列的时候需要设置。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表
+	databaseId 如果配置了 databaseIdProvider，MyBatis 会加载所有的不带 databaseId 或匹配当前 databaseId 的语句；如果带或者不带的语句都有，则不带的会被忽略。我都没用过
+	-->
+    <!-- update语句一般根据主键更新，一般一条就够了 -->
+	<update id="update" parameterType="java.util.Map">
+		update crmCustomer
+		<set>
+			<if test="createTime != null">
+				createTime = #{createTime},
+			</if>
+			<if test="modifiedTime != null">
+				modifiedTime = #{modifiedTime},
+			</if>
+			<if test="customerName != null">
+				customerName = #{customerName},
+			</if>
+		</set>
+		where customerId = #{customerId}
+	</update>
+
+	<!--
+	id 标识，SqlSessionTemplate才能通过 namespace和id 才能找到这条sql语句
+    parameterType 入参的类型，我一般直接用java.util.Map，这样可以带多个参数且不用定义entity
+    flushCache 将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空
+	timeout 设置超时时间，超时之后抛出异常，秒
+	statementType STATEMENT(直接操作sql，不进行预编译)，PREPARED(预处理，参数，进行预编译)或CALLABLE(执行存储过程)。默认值：PREPARED
+	databaseId 如果配置了 databaseIdProvider，MyBatis 会加载所有的不带 databaseId 或匹配当前 databaseId 的语句；如果带或者不带的语句都有，则不带的会被忽略。我都没用过
+	-->
+    <!-- delete语句一般根据主键删除，一般一条够了 -->
+	<delete id="delete" parameterType="java.util.Map">
+		delete from crmCustomer
+		where customerId = #{customerId}
+	</delete>
+
+    <!-- insert update delete 语句一般就上面的写法，当然什么批量插入，根据其他条件更新，根据其他条件删除，就再写新的sql语句 -->
+
+    <!-- select 查询语句都是最复杂，一般会写比较多查询语句，能简单复用就复用，不能就多写几条sql语句，独立分开最简单 -->
+
+    <!--
+    id 标识，SqlSessionTemplate才能通过 namespace和id 才能找到这条sql语句
+    parameterType 入参的类型，我一般直接用java.util.Map，这样可以带多个参数且不用定义entity
+    resultType 返回的类型，我一般直接用java.util.Map，这样可以不用定义entity
+    resultMap 在这个xml可以定义 resultMap标签，然后就使用这个resultMap标签，其实就是添加字段映射规则，能不用就不用， resultMap 和 resultType 只能使用一个
+    flushCache 清空之前查询的本地缓存和二级缓存
+	useCache 启动二级缓存开关
+	timeout 设置超时时间，超时之后抛出异常，秒
+	fetchSize 获取记录的总条数设定
+    -->
+    <!-- 使用where标签可以写成通用sql语句，查询时可以复用 -->
+	<select id="selectAll" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from crmCustomer
+		<where>
+			<if test="customerName != null and customerName != ''">
+				and customerName = #{customerName}
+			</if>
+		</where>;
+	</select>
+
+	<!-- selectPage 分页查找 -->
+	<select id="selectPage" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from crmCustomer
+		<where>
+			<if test="customerName != null and customerName != ''">
+				and customerName = #{customerName}
+			</if>
+		</where>
+		limit #{limitStart}, #{pageSize};
+	</select>
+
+    <!-- 分页查找时，需要总记录数，配合上面selectPage使用，这里sql返回就返回Map，程序从Map总获取总数；就不返回Integer了 -->
+	<select id="selectCount" parameterType="java.util.Map" resultType="java.util.Map">
+		select count(*) from crmCustomer
+		<where>
+			<if test="customerName != null and customerName != ''">
+				and customerName = #{customerName}
+			</if>
+		</where>;
+	</select>
+
+	<!-- selectOne 根据主键查找单条记录 -->
+	<select id="selectOne" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from crmCustomer where customerId=#{customerId};
+	</select>
+    <!-- 上面这四条select语句一般一个表都要用到，where一般用等值查询，如有特殊查询，还是自行判哪些where可以复用 -->
+
+	<!-- foreach 示例演示。 但也可以在程序中拼接sql语句，这里直接填数据 -->
+	<select id="selectIn" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from crmCustomer where customerId in
+        <foreach collection="array" open="(" close=")" item="customerId" index="i" separator=",">
+            #{customerId}
+        </foreach>;
+	</select>
+
+</mapper>

@@ -1,4 +1,4 @@
-package com.demo.test;
+package com.demo.mybatis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

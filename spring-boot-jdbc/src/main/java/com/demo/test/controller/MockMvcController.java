@@ -1,4 +1,4 @@
-package com.demo.test.controller;
+package com.demo.mybatis.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;

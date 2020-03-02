@@ -1,7 +1,7 @@
-package com.demo.test.controller;
+package com.demo.mybatis.controller;
 
 
-import com.demo.test.TestApplication;
+import com.demo.mybatis.TestApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 演示MySQL/MariaDB 的数据类型和java数据类型的对应关系。 这里就写insert和select，其他就不写了，挺麻烦的。 -->
+<mapper namespace="com.demo.mybatis.crmMapper.CrmAllDataTypeMapper">
+
+
+
+
+	<select id="selectAll" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from crmAllDataType;
+	</select>
+
+
+</mapper>

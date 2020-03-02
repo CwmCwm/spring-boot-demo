@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace 命名空间，作用和package类似，都是区分同名方法 -->
+<mapper namespace="com.demo.mybatis.omsMapper.OmsOrderMapper">
+
+    <!--
+    CrmCustomerMapper.xml 写了mybatis常用的标签语法演示
+    这里OmsOrderMapper.xml 演示数据库事务
+     -->
+
+	<insert id="insert" parameterType="java.util.Map">
+		insert into omsOrder
+		(orderId, createTime, modifiedTime, customerId, customerName)
+		values(#{orderId}, #{createTime}, #{modifiedTime}, #{customerId}, #{customerName});
+	</insert>
+
+
+	<update id="update" parameterType="java.util.Map">
+		update omsOrder
+		<set>
+			<if test="createTime != null">
+				createTime = #{createTime},
+			</if>
+			<if test="modifiedTime != null">
+				modifiedTime = #{modifiedTime},
+			</if>
+			<if test="customerId != null">
+				customerId = #{customerId},
+			</if>
+			<if test="customerName != null">
+				customerName = #{customerName},
+			</if>
+		</set>
+		where orderId = #{orderId}
+	</update>
+
+
+	<delete id="delete" parameterType="java.util.Map">
+		delete from omsOrder
+		where orderId = #{orderId}
+	</delete>
+
+
+	<select id="selectAll" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from omsOrder where 1=1;
+	</select>
+
+
+	<select id="selectPage" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from omsOrder where 1=1 limit #{pageNumber}, #{pageSize};
+	</select>
+
+
+
+</mapper>

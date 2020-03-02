@@ -1,4 +1,4 @@
-package com.demo.test.component;
+package com.demo.mybatis.component;
 
 import org.springframework.stereotype.Component;
 

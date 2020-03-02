@@ -40,3 +40,10 @@ springboot的demo，方便学习，回忆，工作
 11. spring-boot-jdbc  
 
 
+
+### 不使用的一些技术，个人看法，熟练度，思想喜好
+1. 不使用jsp，freemarker，thymeleaf 这些模板引擎；采用方案直接前后端分离，JavaScript，Vue，Jquery。原因见 TODO  
+2. 不使用jpa；采用方案mybatis，JDBC。原因见 TODO  
+3. 关系型数据，不使用Oracle，DB2；采用方法mysql，mariaDB，posterSQL。原因见 TODO  
+
+

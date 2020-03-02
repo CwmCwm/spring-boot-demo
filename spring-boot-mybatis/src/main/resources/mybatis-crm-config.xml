@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- mybatis的全局配置文件，这里一个数据源一个全局配置文件 -->
+
+	<!-- <properties resource="db.properties"/> 配置db的连接信息，就是driverClass,url,username,password 这里已经在application.properties配置 -->
+	<!-- <properties resource="db.properties"/> -->
+
+	<!-- 参数设置，一堆参数设置，自行百度 -->
+	<settings>
+		<!-- mapUnderscoreToCamelCase 设置驼峰匹配，这里涉及数据库规范和entity映射，但我写的规范就没用 -->
+		<!-- <setting name="mapUnderscoreToCamelCase" value="true" /> -->
+		<!-- cacheEnabled 这个配置使全局的映射器启用或禁用缓存 -->
+		<setting name="cacheEnabled" value="true" />
+		<!-- defaultStatementTimeout 设置超时时间，它决定驱动等待一个数据库响应的时间 -->
+		<setting name="defaultStatementTimeout" value="25000" />
+	</settings>
+
+	<!-- 别名定义，我这里不用entity写法，这里就不用写entity相关配置
+	<typeAliases>
+		<package name="com.demo.mybatis.entity"/>
+	</typeAliases>
+	-->
+
+	<!-- 配置environment环境 -->
+	<!-- 用于切换环境，如SIT环境，UAT环境等等，我环境切换配置不这样写，都是写成对应 application-SIT.properties, application-UAT.properties
+	原因，不要写一堆配置文件啊，配置文件里面还套文件
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${jdbc_driver}" />
+				<property name="url" value="${jdbc_url}" />
+				<property name="username" value="${jdbc_username}" />
+				<property name="password" value="${jdbc_password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	-->
+
+
+	<!-- 映射文件，mapper的配置文件，mybatis没有通配符*的用法，只能新建一个 .xml 这里就加一个，但spring提供了，所以在Configuration类中配置 -->
+	<!--<mappers>
+		<mapper resource="crmMapper/CrmCustomerMapper.xml" />
+	</mappers>-->
+
+</configuration>  

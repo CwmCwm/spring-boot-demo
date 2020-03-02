@@ -1,6 +1,6 @@
-package com.demo.test.component;
+package com.demo.mybatis.component;
 
-import com.demo.test.TestApplication;
+import com.demo.mybatis.TestApplication;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -3,6 +3,7 @@
 ## 本项目知识点
 1. spring-boot启动时加载图标  
 2. spring-boot的目录结构（maven）  
+3. spring-boot的pom文件解释  
 
 ## 内容
 ### 1. spring-boot启动时加载图标  
@@ -16,4 +17,8 @@
 ./src/test/resources/  单元测试用到的资源，其实就是为了与上面./src/main/resources/ 分开，实际我经常没有创建这个目录，因为没必要区分  
 基本spring-boot项目目录结构就这四个目录  
   
-
+### 3. spring-boot的pom文件解释  
+[](./README-RESOURCES/1.jpg)  
+[](./README-RESOURCES/2.jpg)  
+[](./README-RESOURCES/3.jpg)  
+好吧图片上的mybatis的pom依赖写错了  
