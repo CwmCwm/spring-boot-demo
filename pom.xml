@@ -36,8 +36,11 @@
         <!-- spring-boot actuator监控服务-->
         <module>spring-boot-actuator</module>
 
-        <!-- spring-boot mybatis 关系型数据库连接-->
+        <!-- spring-boot 使用mybatis连接 关系型数据库-->
         <module>spring-boot-mybatis</module>
+
+        <!-- spring-boot 使用jdbc连接 关系型数据库-->
+        <module>spring-boot-jdbc</module>
     </modules>
 
     <build>

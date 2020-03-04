@@ -1,43 +1,38 @@
-# spring-boot-test
+# spring-boot-mybatis
 
 
 ## 本项目知识点
-1. 单元测试的使用场景
-2. maven目录结构
-3. spring-boot单元测试
+1. 环境搭建  
+2. 数据库和程序规范  
+  
 
 
 ## 内容 
-### 1. 单元测试的使用场景
-* 为什么要单元测试？=》因为这是程序员开发代码后的自行校验  
-* 编写单元测试代码=》为了单元测试的自动化  
-* 开发理念=》TDD测试驱动开发（Test-Driven Development），你要知道要什么/明确理解细化需求，才能写出单元测试，
-你单元测试都写出来了，基本所有细节都清晰了，不会有模糊地带，那就开发代码了  
+### 1. 环境搭建
+docker启动 mariadb:10.3 容器，数据库就搭建完成   
 
 
-### 2. maven目录结构
-* src/main/ java源码目录
-  * src/main/java/ java源码目录
-  * src/main/resources/ java资源目录
-* src/test/ java单元测试目录
-  * src/test/java/ java单元测试源码目录
-  * src/test/resources/ java单元测试资源目录
+### 2. 数据库和程序规范  
+关于MySQL/MariaDB的数据库规范，我基本参照阿里巴巴Java开发手册  
+我自己做了简化处理（个人思想就是简单）  
 
-多打几次包，多运行几次就知道上面语义
-
-
-### 3. spring-boot单元测试
-单元测试类的创建规范，见代码，如/main/java/com/demo/test/controller/MockMvcController，
-那么它的单元测试类是/test/java/com/demo/test/controller/MockMvcControllerTest  
-具体见代码  
-
-
-
-### 可能出现问题
-idea的使用：添加test 目录，看 .iml文件  百度“idea添加test目录”
-```
-<sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-<sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-```
+* 命名规则首字母小写的驼峰法命名，更多规则我讲不清就直接看sql脚本和代码，我按照统一规范写（不会出现有多种规范混淆）  
+* 数据库命名使用缩写，因为缩写减少字母啊且这不是无意义/乱来的缩写，如 crm 是 Customer Relationship Management 客户关系管理，具体见sql脚本  
+* 数据表命名加上数据库名作为前缀，加个前缀来标识，如 crmCustomer，具体见sql脚本  
+* 表字段命名，主键命名如 crmCustomer表的主键 customerId， omsOrder表的主键 orderId  
+* 表字段，每个表基本必有 单主键，createTime，modifiedTime  3个字段，具体数据类型，数据生成规则，语义规则 见sql脚本  
+* 索引命名 TODO  
+* 存储过程命名，TODO 基本没写存储过程  
+* 触发器命名，TODO 基本没写触发器    
+* 命名规则基本上前端，后端程序，数据库，同一个语义的数据，命名完全相同；因为首字母小写的驼峰法命名在几种命名规范里面是很好的；从字符数，可读性；所以大家用  
+* Java中我没有创建对应的Entity/POJO类与表对应，使用java.util.Map与表对应，通过Map List的变量命名来确定使用的表，进而确定有哪些字段   
+使用 java.util.Map 和 创建Entity/POJO 与数据表映射比较，自己根据自己的想法/思想进行选择  
+|  | 使用java.util.Map | 创建Entity/POJO |  
+|----|----|----|
+| 业界常规做法 | 个人偏向 | 这个现在是正统的做法 |
+| 复杂性 | 相当简单 | 创建一堆类 |
+| 开发人员业务关心点 | 开发人员需要关心业务吗？需要关心表设计吗？需要关心前后端接口吗？ | 开发人员需要关心业务吗？需要关心表设计吗？需要关心前后端接口吗？ |
+| 能实现业务吗 | 可以 | 可以 |
+| 技术原则和要求 | 自行权衡 | 自行权衡 |
 
 

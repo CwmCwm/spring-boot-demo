@@ -1,43 +1,27 @@
-# spring-boot-test
+# spring-boot-jdbc
 
 
 ## 本项目知识点
-1. 单元测试的使用场景
-2. maven目录结构
-3. spring-boot单元测试
+1. 环境搭建  
+2. 数据库和程序规范  
 
 
 ## 内容 
-### 1. 单元测试的使用场景
-* 为什么要单元测试？=》因为这是程序员开发代码后的自行校验  
-* 编写单元测试代码=》为了单元测试的自动化  
-* 开发理念=》TDD测试驱动开发（Test-Driven Development），你要知道要什么/明确理解细化需求，才能写出单元测试，
-你单元测试都写出来了，基本所有细节都清晰了，不会有模糊地带，那就开发代码了  
+### 1. 环境搭建
+docker启动 mariadb:10.3 容器，数据库就搭建完成  
+前面spring-boot-mybatis项目已经搭建了数据库环境   
 
 
-### 2. maven目录结构
-* src/main/ java源码目录
-  * src/main/java/ java源码目录
-  * src/main/resources/ java资源目录
-* src/test/ java单元测试目录
-  * src/test/java/ java单元测试源码目录
-  * src/test/resources/ java单元测试资源目录
+### 2. 数据库和程序规范  
+见spring-boot-mybatis项目的数据库和程序规范  
 
-多打几次包，多运行几次就知道上面语义
+比较 springJDBC 和 mybatis  
+|  | springJDBC | mybatis |  
+|----|----|----|
+| sql语句 | 都是写sql语句，会sql就轻松上手 | 都是写sql语句，会sql就轻松上手 |
+| sql拼接 | 自己手动拼接，有点麻烦 | 看一下几个标签，拼接方便，轻松上手 |
+| 表和记录映射 | 都可以使用Map和Entity | 都可以使用Map和Entity |
 
-
-### 3. spring-boot单元测试
-单元测试类的创建规范，见代码，如/main/java/com/demo/test/controller/MockMvcController，
-那么它的单元测试类是/test/java/com/demo/test/controller/MockMvcControllerTest  
-具体见代码  
-
-
-
-### 可能出现问题
-idea的使用：添加test 目录，看 .iml文件  百度“idea添加test目录”
-```
-<sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-<sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-```
+基本上两个工具使用起来没啥不同，会sql都轻松上手  
 
 

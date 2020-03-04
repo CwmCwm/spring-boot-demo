@@ -41,8 +41,8 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <!-- mybatis-spring-boot-starter 是mybatis 提供的starter，就是提供自动注册mybatis组件。
-        你看spring-boot预定义就没有mybatis，自己找mybatis的starter -->
+        <!-- mybatis-spring-boot-starter 是mybatis官方提供的starter，就是提供自动注册mybatis组件。
+        因为spring-boot官方没有提供mybatis的starter -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>

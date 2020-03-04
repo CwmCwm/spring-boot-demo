@@ -1,13 +1,13 @@
-package com.demo.mybatis;
+package com.demo.jdbc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TestApplication {
+public class JDBCApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestApplication.class, args);
+		SpringApplication.run(JDBCApplication.class, args);
 	}
 
 }
