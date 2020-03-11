@@ -41,6 +41,9 @@
 
         <!-- spring-boot 使用jdbc连接 关系型数据库-->
         <module>spring-boot-jdbc</module>
+
+        <!-- spring-boot 使用security连接 关系型数据库-->
+        <module>spring-boot-security</module>
     </modules>
 
     <build>

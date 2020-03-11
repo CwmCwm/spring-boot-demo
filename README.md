@@ -38,6 +38,8 @@ springboot的demo，方便学习，回忆，工作
   9.1  docker启动mariadb  
 10. spring-boot-mybatis  
 11. spring-boot-jdbc  
+12. spring-boot-security  
+13. spring-boot-schedule  
 
 
 

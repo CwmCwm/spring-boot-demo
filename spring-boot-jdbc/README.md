@@ -10,6 +10,7 @@
 ### 1. 环境搭建
 docker启动 mariadb:10.3 容器，数据库就搭建完成  
 前面spring-boot-mybatis项目已经搭建了数据库环境   
+建表sql脚本见spring-boot-mybatis项目
 
 
 ### 2. 数据库和程序规范  
