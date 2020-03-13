@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>websocket IM通讯</title>
+        <link type="text/css" href="./css/bootstrap.min.css">
+        <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    </head>
+
+    <body>
+        <div>当前用户【fromUserId】：<input id="fromUserId" name="fromUserId" type="text" value=""></div>
+        <div>发送用户【toUserId】：<input id="toUserId" name="toUserId" type="text" value=""></div>
+        <div>发送信息【contentText】：<input id="contentText" name="contentText" type="text" value=""></div>
+        <div>【操作】：<button onclick="openWebsocket()" type="button">开启websocket连接</button></div>
+        <div>【操作】：<button onclick="sendMessage()" type="button">发送消息</button></div>
+
+        <!-- 交互，展示效果自己写 -->
+        <!-- 信息显示框 -->
+        <div id="contentDiv"></div>
+
+        <script>
+            var socket;
+
+            if (typeof(WebSocket) == "undefined") {
+                alert("您的浏览器不支持WebSocket");
+            } else {
+                alert("您的浏览器支持WebSocket");
+            }
+
+            function openWebsocket() {
+                //实现化WebSocket对象，指定要连接的服务器地址与端口  建立连接
+                let socketUrl = "ws://localhost:8080/im/" + $("#fromUserId").val();
+                socket = new WebSocket(socketUrl);
+
+                //打开事件
+                socket.onopen = function() {
+                    console.log("websocket已打开");
+                };
+
+                //获得消息事件
+                socket.onmessage = function(msg) {
+                    console.log(msg.data);
+                    if (msg.data == "连接成功") {
+                        return;
+                    }
+                    let msgJson = JSON.parse(msg.data);
+                    let appendHtml = "<p>" + msgJson.fromUserId + ":" + msgJson.contentText + "</p>";
+                    $("#contentDiv").append(appendHtml);
+                };
+
+                //关闭事件
+                socket.onclose = function() {
+                    console.log("websocket已关闭");
+                };
+
+                //发生了错误事件
+                socket.onerror = function() {
+                    console.log("websocket发生了错误");
+                }
+
+            }
+
+            function sendMessage() {
+                let jsonString = '{'
+                                +   '"fromUserId":"' + $("#fromUserId").val() + '",'
+                                +   '"toUserId":"' + $("#toUserId").val() + '",'
+                                +   '"contentText":"' + $("#contentText").val() + '"'
+                                + '}';
+                socket.send(jsonString);
+            }
+        </script>
+    </body>
+</html>

@@ -4,7 +4,7 @@
 ## 本项目知识点
 1. spring-schedule是什么  
 2. 准备条件  
-3. 
+3. 演示示例  
 
 
 
@@ -24,7 +24,19 @@ MySQL/MariaDB数据库，之前docker 安装过了
 
 
 
+### 3. 演示示例  
+第一个示例  
+使用@Scheduled 注解方式，这种方式就是写死，开启/停止定时任务都要重启代码  
+代码见下  
+com.demo.schedule.schedule.Task1  
 
+
+第二个示例  
+使用编程式代码开启/停止定时任务，这个才是本质    
+代码见下  
+com.demo.schedule.schedule.BirthdayTask  
+com.demo.schedule.schedule.CouponTask  
+com.demo.schedule.schedule.ScheduleService  
 
 
 

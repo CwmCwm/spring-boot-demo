@@ -35,17 +35,19 @@ springboot的demo，方便学习，回忆，工作
 7. spring-boot-log  
 8. spring-boot-actuator  
 9. docker
-  9.1  docker启动mariadb  
+  9.1  docker安装mariadb  
+  9.2  docker安装svn-server  
 10. spring-boot-mybatis  
 11. spring-boot-jdbc  
 12. spring-boot-security  
 13. spring-boot-schedule  
-
+14. spring-boot-websocket
 
 
 ### 不使用的一些技术，个人看法，熟练度，思想喜好
 1. 不使用jsp，freemarker，thymeleaf 这些模板引擎；采用方案直接前后端分离，JavaScript，Vue，Jquery。原因见 TODO  
 2. 不使用jpa；采用方案mybatis，JDBC。原因见 TODO  
 3. 关系型数据，不使用Oracle，DB2；采用方法mysql，mariaDB，posterSQL。原因见 TODO  
+
 
 

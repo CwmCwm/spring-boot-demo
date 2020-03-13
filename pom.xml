@@ -47,6 +47,9 @@
 
         <!-- spring-boot 使用schedule 定时任务-->
         <module>spring-boot-schedule</module>
+
+        <!-- spring-boot 使用websocket -->
+        <module>spring-boot-websocket</module>
     </modules>
 
     <build>
