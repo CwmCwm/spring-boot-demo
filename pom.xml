@@ -42,8 +42,11 @@
         <!-- spring-boot 使用jdbc连接 关系型数据库-->
         <module>spring-boot-jdbc</module>
 
-        <!-- spring-boot 使用security连接 关系型数据库-->
+        <!-- spring-boot 使用security 安全框架-->
         <module>spring-boot-security</module>
+
+        <!-- spring-boot 使用schedule 定时任务-->
+        <module>spring-boot-schedule</module>
     </modules>
 
     <build>
