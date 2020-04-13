@@ -5,9 +5,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.internal.verification.Times;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 
 /**
@@ -53,6 +59,29 @@ public class HumanTest {
     @Test
     public void test1() {
         System.out.println(human.toString());
+    }
+
+    @Test
+    public void test2() {
+        long l1 = System.currentTimeMillis();
+        Timestamp timestamp = new Timestamp(l1);
+        System.out.println(l1);
+        System.out.println(timestamp.getTime());
+        System.out.println(timestamp.getNanos());
+    }
+
+    @Test
+    public void test3() {
+        System.out.println(System.currentTimeMillis());
+
+        LocalDate localDate = LocalDate.now();
+        LocalDateTime localDateTime = LocalDateTime.now();
+
+        System.out.println(localDate.toString());
+        System.out.println(localDateTime.toString());
+
+
+        System.out.println(localDateTime.toInstant(ZoneOffset.of("+8")).toEpochMilli());
     }
 
 

@@ -50,6 +50,9 @@
 
         <!-- spring-boot 使用websocket -->
         <module>spring-boot-websocket</module>
+
+        <!-- spring-boot 使用redis -->
+        <module>spring-boot-redis</module>
     </modules>
 
     <build>

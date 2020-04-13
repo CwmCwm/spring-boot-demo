@@ -16,6 +16,8 @@ create table `crmCustomer` (
 COMMENT='顾客信息表';
 
 
+-- ps1： mysql数据类型 datetime 和 timestamp 在数据库中存储的UTC的时间戳，
+-- 记住修改mysql的时区和程序的时区时间一致
 -- 数据类型演示
 create table `crmAllDataType`(
   `dataTypeTinyint` tinyint NOT NULL COMMENT '整形数值，1个字节，tinyint类型对应java.lang.Integer',
