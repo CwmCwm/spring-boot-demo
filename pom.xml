@@ -53,6 +53,9 @@
 
         <!-- spring-boot 使用redis -->
         <module>spring-boot-redis</module>
+
+        <!-- spring-boot 使用 mongo -->
+        <module>spring-boot-mongo</module>
     </modules>
 
     <build>

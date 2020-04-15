@@ -24,7 +24,7 @@ docker有官方版本的redis
 [](./README-RESOURCES/docker-redis1.jpg)
 
 
-启动svn-server容器
+启动redis容器
 ``` docker run --name redis -v /container/redis/conf:/conf -p 6379:6379 --network diyNetwork -d redis:4.0  ```  
 --name redis                                         设置容器name为redis，名字自己起，要有语义 
 -d                                                   指定这个容器后台运行  
