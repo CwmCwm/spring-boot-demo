@@ -99,5 +99,20 @@ public class CrmCustomerServiceTest {
     }
 
 
+    @Test
+    public void test1() throws Exception {
+        Map<String, Object> crmCustomer1 = new HashMap<>();
+        crmCustomer1.put("customerId", snowFlakeUtil.nextId());
+        crmCustomer1.put("createTime", new Timestamp(System.currentTimeMillis()));
+        crmCustomer1.put("modifiedTime", new Timestamp(System.currentTimeMillis()));
+        crmCustomer1.put("customerName", "cwm");
 
+        Map<String, Object> crmCustomer2 = new HashMap<>();
+        crmCustomer2.put("customerId", snowFlakeUtil.nextId());
+        crmCustomer2.put("createTime", new Timestamp(System.currentTimeMillis()));
+        crmCustomer2.put("modifiedTime", new Timestamp(System.currentTimeMillis()));
+        crmCustomer2.put("customerName", "hwy");
+
+        crmCustomerService.insertTwoRecordV1(crmCustomer1, crmCustomer2);
+    }
 }

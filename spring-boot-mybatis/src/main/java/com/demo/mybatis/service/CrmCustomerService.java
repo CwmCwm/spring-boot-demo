@@ -3,6 +3,7 @@ package com.demo.mybatis.service;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -49,6 +50,21 @@ public class CrmCustomerService {
 
     public List<Map<String, Object>> selectPage (Map<String, Object> crmCustomer) {
         return crmSqlSessionTemplate.selectList("com.demo.mybatis.crmMapper.CrmCustomerMapper.selectPage", crmCustomer);
+    }
+
+
+    @Transactional(transactionManager = "crmTransactionManager")
+    public int insertTwoRecordV1 (Map<String, Object> crmCustomer1, Map<String, Object> crmCustomer2) throws Exception {
+        int result1 = crmSqlSessionTemplate.insert("com.demo.mybatis.crmMapper.CrmCustomerMapper.insert", crmCustomer1);
+        System.out.println("result1=" + result1);
+        int result2 = crmSqlSessionTemplate.insert("com.demo.mybatis.crmMapper.CrmCustomerMapper.insert", crmCustomer2);
+        System.out.println("result2=" + result2);
+
+        if (1==1) {
+            //throw new Exception("抛出异常，看看会不会回滚");
+            throw new RuntimeException("抛出异常，看看会不会回滚");
+        }
+        return 1;
     }
 
 }

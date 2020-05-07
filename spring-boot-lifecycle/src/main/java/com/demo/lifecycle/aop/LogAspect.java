@@ -3,6 +3,7 @@ package com.demo.lifecycle.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -26,6 +27,7 @@ import java.util.Arrays;
  */
 @Component
 @Aspect
+@Order(value = 1)
 public class LogAspect {
 
     // 因为下面每个的拦截点是一致，所以这里统一定义，方便下面统一使用，下面的表达式语法百度吧
@@ -36,12 +38,12 @@ public class LogAspect {
      * @before 代表在目标方法执行前切入,并指定在哪个方法前切入
      * @Before("execution(public int com.demo.lifecycle.aop.Calculator.*(..))") //这种写法是粒度更细
      * */
-    @Before("pointCut()")
+    @Before(value = "pointCut()")
     public void logStart(JoinPoint joinPoint){
         System.out.println("LogAspect.logStart(JoinPoint joinPoint) => " + joinPoint.getSignature().getName()+"除法运行....参数列表是:{"+ Arrays.asList(joinPoint.getArgs())+"}");
     }
 
-    @After("pointCut()")
+    @After(value = "pointCut()")
     public void logEnd(JoinPoint joinPoint){
         System.out.println("LogAspect.logEnd(JoinPoint joinPoint) => " + joinPoint.getSignature().getName()+"除法结束......");
 
@@ -58,6 +60,8 @@ public class LogAspect {
         System.out.println("LogAspect.logException(Object result) => " + "运行异常......异常信息是:{"+exception+"}");
     }
 
+
+    //@Around 和上面的  @Before,  @After, @AfterReturning, @AfterThrowing 不一起使用，即你用了 @Around 就不用 @Before,  @After, @AfterReturning, @AfterThrowing
     //自己试验比较@Around  和 @Before与@After 的先后顺序
 //	@Around("pointCut()")
 //	public Object Around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{

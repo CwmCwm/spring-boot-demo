@@ -13,6 +13,7 @@
 10. Servlet的Filter的使用  
 11. Listener的使用  
 12. 前后端交互规范  
+13. bean的多例模式，见
 
 ## 内容
 ### 1. 如何启动一个spring-boot http项目  

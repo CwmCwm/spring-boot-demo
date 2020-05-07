@@ -30,7 +30,6 @@ public class CrmAllDataTypeServiceTest {
 
     @Test
     public void selectAll() {
-
         Map<String, Object> crmAllDataType= new HashMap<>();
         List<Map<String, Object>> crmAllDataTypes = crmSqlSessionTemplate.selectList("com.demo.mybatis.crmMapper.CrmAllDataTypeMapper.selectAll", crmAllDataType);
         System.out.println(crmAllDataTypes);
