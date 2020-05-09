@@ -99,3 +99,31 @@ values
 );
 
 
+
+
+-- crm1 和 crm2 表用于演示/debug 数据库事务/spring事务
+create table `crm1` (
+    `crm1Id` bigint unsigned NOT NULL COMMENT '主键',
+    PRIMARY KEY (`crm1Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+COMMENT='用于演示/debug 数据库事务/spring事务';
+
+
+create table `crm2` (
+    `crm2Id` bigint unsigned NOT NULL COMMENT '主键',
+    PRIMARY KEY (`crm2Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+COMMENT='用于演示/debug 数据库事务/spring事务';
+
+
+
+
+
+
+
+
+
+
+
+
+

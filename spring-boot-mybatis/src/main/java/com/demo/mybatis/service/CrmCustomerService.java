@@ -29,6 +29,9 @@ import java.util.Map;
 @Service
 public class CrmCustomerService {
 
+    //你觉得不同线程进来 crmSqlSessionTemplate 的对象实例是一样的吗？ =》 是一样的
+    //那么不同线程会用同一个数据库连接吗 =》 肯定不可以啊
+    //因为SqlSessionTemplate 内部实现代理去， 你看它内部有 sqlSessionFactory变量和sqlSessionProxy变量，看这命名就知道了
     @Resource(name = "crmSqlSessionTemplate")
     SqlSessionTemplate crmSqlSessionTemplate;
 

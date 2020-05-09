@@ -19,6 +19,8 @@ import javax.sql.DataSource;
 
 
 /**
+ * 我不写动态数据库源的，什么还要写路由实现/切面实现，我就这里指定数据源的名称，service就按名称注入
+ *
  * crm 数据库配置
  *
  * @MapperScan
@@ -29,6 +31,15 @@ import javax.sql.DataSource;
 // @MapperScan(basePackages = "com.demo.mybatis.dao.mapper.crm", sqlSessionTemplateRef  = "crmSqlSessionTemplate")
 public class CrmDataSourceConfiguration {
 
+    /**
+     这里 configLocation 和 mapperLocations 是通过@Value 注入application.properties中的值
+     下面
+     @Bean(name = "crmSqlSessionFactory")
+     @Primary
+     public SqlSessionFactory sqlSessionFactory(@Qualifier("crmDataSource") DataSource dataSource) throws Exception
+     中使用了 configLocation 和 mapperLocations
+     也就是说这里是有循序的，spring先注入 configLocation 和 mapperLocations ，后解析实例化name=crmSqlSessionFactory的SqlSessionFactory实例
+     * */
     @Value("${mybatis.crm.config-location}")
     private String configLocation;
 

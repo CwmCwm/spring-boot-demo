@@ -40,7 +40,9 @@ rabbitmq 就是消息的搬运工
 
 
 ### 4. 启动spring-boot-rabbitmq-consumer
-
+启动spring-boot-rabbitmq-consumer后  
+[](./README-RESOURCES/spring-boot-rabbitmq-consumer1.jpg)  
+[](./README-RESOURCES/spring-boot-rabbitmq-consumer2.jpg)  
 
 
 

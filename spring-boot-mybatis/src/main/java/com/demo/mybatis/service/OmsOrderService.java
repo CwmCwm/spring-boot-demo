@@ -9,6 +9,7 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,7 +24,9 @@ public class OmsOrderService {
     @Resource(name = "crmSqlSessionTemplate")
     SqlSessionTemplate crmSqlSessionTemplate;
 
-    //注入数据库事务管理器
+    //就不用 TransactionTemplate这个模板类，本质上TransactionTemplate就是在包含PlatformTransactionManager的一个属性，在去调用PlatformTransactionManager
+    //因为PlatformTransactionManager 调用很简单了，干嘛要TransactionTemplate这个模板类，你说复杂的过程用模板类来简化代码我认同会去做
+    //注入数据库事务管理器，编程式事务的写法
     @Resource(name = "omsTransactionManager")
     DataSourceTransactionManager omsTransactionManager;
     @Resource(name = "crmTransactionManager")

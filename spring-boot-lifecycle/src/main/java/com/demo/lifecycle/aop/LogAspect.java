@@ -61,6 +61,9 @@ public class LogAspect {
     }
 
 
+    //@Around 方法中要手动调用 proceedingJoinPoint.proceed();  而其他 @Before,  @After, @AfterReturning, @AfterThrowing 就不需要，为什么？
+    //因为 @Before注解的方法会被包装成 org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor
+    //MethodBeforeAdviceInterceptor的invoke方法中调用了 return mi.proceed();  其他同理
     //@Around 和上面的  @Before,  @After, @AfterReturning, @AfterThrowing 不一起使用，即你用了 @Around 就不用 @Before,  @After, @AfterReturning, @AfterThrowing
     //自己试验比较@Around  和 @Before与@After 的先后顺序
 //	@Around("pointCut()")
