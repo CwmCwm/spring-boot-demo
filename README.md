@@ -44,9 +44,10 @@ springboot的demo，方便学习，回忆，工作
 14. spring-boot-websocket  
 15. spring-boot-redis  
 16. spring-boot-mongodb  
-17. spring-boot-rabbitmq  
-18. spring-boot-kafka  
-19. spring-boot-rocketmq  
+17. spring-boot-cache  
+18. spring-boot-rabbitmq  
+19. spring-boot-kafka  
+20. spring-boot-rocketmq  
 
 
 

@@ -5,7 +5,6 @@ import com.demo.http.component.ScopeRequestComponent;
 import com.demo.http.component.ScopeSessionComponent;
 import com.demo.http.component.ScopeSingletonComponent;
 import org.springframework.beans.BeansException;
-import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;

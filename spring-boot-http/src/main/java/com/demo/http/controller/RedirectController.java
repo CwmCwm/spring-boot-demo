@@ -4,11 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 
 /**
  * springMVC重定向，注意重定向的使用场景，如用户收藏主页url，而你改变了主页url，你要兼容跳转咯；

@@ -1,6 +1,5 @@
 package com.demo.http.controller;
 
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
