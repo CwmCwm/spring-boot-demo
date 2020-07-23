@@ -1,0 +1,15 @@
+# For advice on how to change settings please see
+# http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html
+
+[mysqld]
+# server-id 在同一个mysql集群中server-id不能相同，这里用端口作为标识（用个简单浅显的规则）
+server-id=3322
+
+# log-bin 开启mysql的复制功能
+log-bin=mysql-bin
+
+# log-slave-updates 表示从的从也可以复制（这种解释谁看的懂啊）
+# 举个示例，以这个架构图，其实就是在3311插入数据，3312复制了也有数据，3321和3322也复制了有数据
+# 如果没有log-slave-updates， 在3311插入数据，3312复制了也有数据，3321和3322是不会复制的，没有数据；  在3312插入数据，3311有复制有数据，3321和3322也复制了有数据
+log-slave-updates
+

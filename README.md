@@ -47,7 +47,10 @@ springboot的demo，方便学习，回忆，工作
 17. spring-boot-cache  
 18. spring-boot-rabbitmq  
 19. spring-boot-kafka  
-20. spring-boot-rocketmq  
+20. spring-boot-starter  
+
+
+
 
 
 

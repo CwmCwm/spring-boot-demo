@@ -62,6 +62,10 @@
 
         <!-- spring-boot 使用 mongo -->
         <module>spring-boot-rabbitmq</module>
+
+
+        <!-- spring-boot 自定义starter -->
+        <module>spring-boot-starter</module>
     </modules>
 
     <build>

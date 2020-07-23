@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import java.io.IOException;
 
 
 /**
@@ -12,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
  * @WebFilter 的属性配置看注解的注释
  * 因为Servlet容器都归spring管理了，所以可以注入spring容器中的bean
  * */
-@WebFilter(filterName = "diyFilter", urlPatterns = "/diyFilterController/test1")
+@WebFilter(filterName = "diyFilter", urlPatterns = {"/diyFilterController/test1"})
 public class DiyFilter implements Filter {
 
     // 注入DiyWebMvcConfig
@@ -33,8 +34,11 @@ public class DiyFilter implements Filter {
      * 使用场景：感觉就是一些前置处理，拦截器HandlerInterceptor 也可以做，与HandlerInterceptor相比定位尴尬
      * */
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         System.out.println(Thread.currentThread() + "-------->:DiyFilter.doFilter");
+
+        //执行完整个filter后，继续向下传递执行
+        filterChain.doFilter(request, response);
     }
 
     /**
