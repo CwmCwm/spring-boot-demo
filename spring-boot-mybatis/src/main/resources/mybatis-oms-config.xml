@@ -6,7 +6,9 @@
 	<!-- 参数设置，一堆参数设置，自行百度 -->
 	<settings>
 		<setting name="cacheEnabled" value="true" />
+
 		<setting name="defaultStatementTimeout" value="25000" />
+		<setting name="logImpl" value="STDOUT_LOGGING" />
 	</settings>
 
 

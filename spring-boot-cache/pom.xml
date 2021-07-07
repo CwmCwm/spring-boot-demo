@@ -46,6 +46,13 @@
             <artifactId>commons-pool2</artifactId>
         </dependency>
 
+		<!-- ehcache缓存，本地缓存 -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -26,23 +26,28 @@ public class OmsOrderServiceTest {
     @Autowired
     private SnowFlakeUtil snowFlakeUtil;
 
+    @Resource(name = "omsSqlSessionTemplate")
+    SqlSessionTemplate omsSqlSessionTemplate;
+
     @Test
     public void test1() throws Exception {
-        Map<String, Object> omsOrder1 = new HashMap<>();
-        omsOrder1.put("orderId", 1L);
-        omsOrder1.put("createTime", new Timestamp(System.currentTimeMillis()));
-        omsOrder1.put("modifiedTime", new Timestamp(System.currentTimeMillis()));
-        omsOrder1.put("customerId", 1);
-        omsOrder1.put("customerName", "cwm");
+        for (int i=1; i<1000000; i++) {
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("t1_id", i);
+            Map<String, Object> result = omsSqlSessionTemplate.selectOne("com.demo.mybatis.omsMapper.t1Mapper.selectOneById", paramMap);
+            System.out.println(result);
+        }
+    }
 
-        Map<String, Object> omsOrder2 = new HashMap<>();
-        omsOrder2.put("orderId", 2L);
-        omsOrder2.put("createTime", new Timestamp(System.currentTimeMillis()));
-        omsOrder2.put("modifiedTime", new Timestamp(System.currentTimeMillis()));
-        omsOrder2.put("customerId", 2);
-        omsOrder2.put("customerName", "hwy");
 
-        omsOrderService.insertTwoRecordV1(omsOrder1, omsOrder2);
+    @Test
+    public void test2() throws Exception {
+        for (int i=1; i<100; i++) {
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("t1_id", 1);
+            Map<String, Object> result = omsSqlSessionTemplate.selectOne("com.demo.mybatis.omsMapper.t1Mapper.selectOneById", paramMap);
+            System.out.println(result);
+        }
     }
 
 

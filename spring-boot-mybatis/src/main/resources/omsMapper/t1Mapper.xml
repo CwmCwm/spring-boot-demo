@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace 命名空间，作用和package类似，都是区分同名方法 -->
+<mapper namespace="com.demo.mybatis.omsMapper.t1Mapper">
+	<cache eviction="LRU" flushInterval="100000" size="1024" readOnly="true"/>
+
+	<select id="selectOneById" parameterType="java.util.Map" resultType="java.util.Map">
+		select * from t1 where t1_id=#{t1_id};
+	</select>
+
+
+
+
+</mapper>

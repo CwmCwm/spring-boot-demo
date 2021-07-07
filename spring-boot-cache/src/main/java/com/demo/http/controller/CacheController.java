@@ -86,5 +86,27 @@ public class CacheController {
         return responseMap;
     }
 
+    @RequestMapping(value = "/cache/chCacheManager1")
+    @ResponseBody
+    public Object chCacheManager1(@RequestParam(value = "userId") Long userId) {
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "success");
+        Map<String, Object> user = userService.selectOneFromEhCacheManager1(userId);
+        responseMap.put("user", user);
+        return responseMap;
+    }
+
+    @RequestMapping(value = "/cache/chCacheManager2")
+    @ResponseBody
+    public Object chCacheManager2(@RequestParam(value = "userId") Long userId) {
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("errorCode", 0);
+        responseMap.put("message", "success");
+        Map<String, Object> user = userService.selectOneFromEhCacheManager2(userId);
+        responseMap.put("user", user);
+        return responseMap;
+    }
+
 
 }

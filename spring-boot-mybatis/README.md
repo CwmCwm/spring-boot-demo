@@ -215,6 +215,36 @@ DataSourceTransactionManager->389:DataSourceUtils.releaseConnection(con, this.da
 
 
 
+```
+mysql 使用存储过程插入100万条数据
+
+建表语句
+CREATE TABLE `t1` (
+  `t1_id` int(10) NOT NULL AUTO_INCREMENT,
+  't1_name' char(32) NOT NULL,
+  PRIMARY KEY (`t1_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+存储过程  
+-- 存储过程要是存在，先进行删除
+DROP PROCEDURE IF EXISTS my_insert;
+-- 定义存储过程
+CREATE PROCEDURE my_insert()
+BEGIN
+   DECLARE n int DEFAULT 0;
+           START TRANSACTION;   -- 开启事务，关闭自动提交
+                loopname1:LOOP
+                        INSERT INTO t1(t1_name) VALUES('cwm');
+           SET n=n+1;
+        IF n=1000000 THEN
+            LEAVE loopname1;
+        END IF;
+        END LOOP loopname1;
+COMMIT;  -- 数据插入完毕，手动提交
+END;
+
+```
 
 
 
