@@ -63,9 +63,11 @@
         <!-- spring-boot 使用 mongo -->
         <module>spring-boot-rabbitmq</module>
 
-
         <!-- spring-boot 自定义starter -->
         <module>spring-boot-starter</module>
+
+        <!-- 常用的doc, xls, docx, xlsx , pdf 的渲染和转化 -->
+        <module>spring-boot-office</module>
     </modules>
 
     <build>
