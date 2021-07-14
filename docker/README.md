@@ -45,7 +45,7 @@
 注意点2 CentOS7添加定时任务去更新网络时间（原因时间同步嘛，不然会有些麻烦，如docker拉取镜像）  
 
 #### 3.3 安装docker  
-这里使用 docker-ce-18.06.3.ce-3.el7  这个版本
+这里使用 docker-ce-18.06.3.ce-3.el7  这个版本   
 安装好CentOS7后，配置好网络后，使用yum安装docker  
 [CentOS7安装docker](https://blog.csdn.net/c15625012146/article/details/86654641)  
 安装完docker，启动docker，运行hello-world容器试试  
@@ -56,6 +56,12 @@
 具体见本目录对应README.md，演示安装容器  
 然后就是docker命令，这个就多练多写，用多了自然就记住，一般就记住常用命令，我就记住十几个吧，其他当然是百度  
 对应项目就写成readme文档，方便自己，方便他人    
+
+
+
+
+
+
 
 
 

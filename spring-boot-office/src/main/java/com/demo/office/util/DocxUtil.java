@@ -26,7 +26,7 @@ public class DocxUtil {
 	//看看 XWPFDocument 怎么使用，你可以实验效果如何，如doc文档的图片/表格/链接等等
 	//这个debug看XWPFDocument的数据结构，就是xml格式
 	public static void main(String[] args) {
-		File file = new File("E:\\gitWorkspace\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\docx1.docx");
+		File file = new File("D:\\cwm\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\docx1.docx");
 		try {
 			FileInputStream fileInputStream = fileInputStream = new FileInputStream(file);
 			XWPFDocument xwpfDocument = new XWPFDocument(fileInputStream);
@@ -39,7 +39,7 @@ public class DocxUtil {
 			//但是我在docx文档的table中也使用了${abc_xyz} ，就不会拆分单词了，这个分词规则无法捉摸啊
 			replaceMap.put("${abc_xyz}", "123_456");
 			replaceMap.put("${abcd_xyz}", "1234_567");
-			replaceMap.put("${gggABC}", "111222");
+			replaceMap.put("${gggABC}", "123456中文不乱码");
 			replaceMap.put("${helloWorldAreYouOk}", "1111111111111111111111");
 
 			//获取所有段落，遍历段落中的文本，替换占位符
@@ -113,7 +113,7 @@ public class DocxUtil {
 			}
 
 			//操作完doc文档后，导出新的doc文档
-			xwpfDocument.write(new FileOutputStream("E:\\gitWorkspace\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\docx2.docx", true));
+			xwpfDocument.write(new FileOutputStream("D:\\cwm\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\docx2.docx", true));
 			fileInputStream.close();
 		} catch (Exception e) {
 			e.printStackTrace();

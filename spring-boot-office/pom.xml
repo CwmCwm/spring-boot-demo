@@ -29,19 +29,40 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-
-		<!-- poi-scratchpad包是对doc文件的读取 -->
+		<!--
+		Apache POI是Apache软件基金会的开放源码函式库，POI提供API给Java程序对Microsoft Office格式档案读和写的功能。
+		HSSF提供读写Microsoft Excel XLS格式档案的功能。
+		XSSF提供读写Microsoft Excel OOXML XLSX格式档案的功能。
+		HWPF提供读写Microsoft Word DOC格式档案的功能。
+		HSLF提供读写Microsoft PowerPoint格式档案的功能。
+		HDGF提供读Microsoft Visio格式档案的功能。
+		HPBF提供读Microsoft Publisher格式档案的功能。
+		HSMF提供读Microsoft Outlook格式档案的功能。
+		-->
+		<!-- poi-scratchpad包是对dox/xls的操作 -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-scratchpad</artifactId>
 			<version>3.8</version>
 		</dependency>
 
-		<!-- poi-ooxml包是对docx文件的读取 -->
+		<!-- poi-ooxml包是对docx/xlsx的操作 -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.8</version>
+		</dependency>
+
+		<!-- documents4j将doc/docx文档转pdf -->
+		<dependency>
+			<groupId>com.documents4j</groupId>
+			<artifactId>documents4j-local</artifactId>
+			<version>1.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.documents4j</groupId>
+			<artifactId>documents4j-transformer-msoffice-word</artifactId>
+			<version>1.1.5</version>
 		</dependency>
 
 	</dependencies>

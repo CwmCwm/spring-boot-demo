@@ -20,7 +20,7 @@ public class DocUtil {
 
 	//看看 HWPFDocument 怎么使用，你可以实验效果如何，如doc文档的图片/表格/链接等等
 	public static void main(String[] args) {
-		File file = new File("E:\\gitWorkspace\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\doc1.doc");
+		File file = new File("D:\\cwm\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\doc1.doc");
 		try {
 			FileInputStream fileInputStream = fileInputStream = new FileInputStream(file);
 			HWPFDocument hwpfDocument = new HWPFDocument(fileInputStream);
@@ -40,10 +40,10 @@ public class DocUtil {
 			//你debug看下 range 是什么，下面${abc_xyz}保持原样，不像docx文档，会对单词进行拆分，看 DocxUtil工具类注释
 			range.replaceText("${name}", "cwm");
 			range.replaceText("${birthday}", "1970-01-01");
-			range.replaceText("${abc_xyz}", "123456");
+			range.replaceText("${abc_xyz}", "123456中文不乱码");
 
 			//操作完doc文档后，导出新的doc文档
-			hwpfDocument.write(new FileOutputStream("E:\\gitWorkspace\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\doc2.doc", true));
+			hwpfDocument.write(new FileOutputStream("D:\\cwm\\spring-boot-demo\\spring-boot-office\\src\\main\\resources\\doc2.doc", true));
 			fileInputStream.close();
 		} catch (Exception e) {
 			e.printStackTrace();
